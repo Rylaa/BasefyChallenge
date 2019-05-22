@@ -75,7 +75,7 @@ class RepositoryDetailViewController : UIViewController {
         forks.topToBottom(of: branch, offset: 10)
         forks.left(to: view,offset:30)
         
-        
+         
     }
 }
 extension RepositoryDetailViewController : RepositoryDetailDelegate {
