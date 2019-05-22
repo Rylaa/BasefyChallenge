@@ -1,0 +1,24 @@
+PODS:
+  - Alamofire (5.0.0-beta.5)
+  - Kingfisher (5.3.1)
+  - TinyConstraints (4.0.0)
+
+DEPENDENCIES:
+  - Alamofire (~> 5.0.0-beta.5)
+  - Kingfisher (~> 5.0)
+  - TinyConstraints
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - Kingfisher
+    - TinyConstraints
+
+SPEC CHECKSUMS:
+  Alamofire: 9afb08f7f43efcc71c072374e720fcf67521317d
+  Kingfisher: d9e7e0b209b59b8f9873aa2f37654e81a7beea51
+  TinyConstraints: 03bc091844b98c18dbaead8b1153242a42721b56
+
+PODFILE CHECKSUM: 2005b9c70caf91dc964dd357310d2c0d381705d9
+
+COCOAPODS: 1.6.0

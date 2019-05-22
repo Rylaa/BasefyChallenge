@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B009C7DAA4C5126A0160C3DE /* Pods_BasefyChallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADACB80A569288FF04D10DA8 /* Pods_BasefyChallenge.framework */; };
 		DDF0FE8B229477BD00C3D7BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF0FE8A229477BD00C3D7BA /* AppDelegate.swift */; };
 		DDF0FE92229477BE00C3D7BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDF0FE91229477BE00C3D7BA /* Assets.xcassets */; };
 		DDF0FE95229477BE00C3D7BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDF0FE93229477BE00C3D7BA /* LaunchScreen.storyboard */; };
@@ -48,6 +49,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		53390ACB6953F32365CDBB56 /* Pods-BasefyChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BasefyChallenge.release.xcconfig"; path = "Target Support Files/Pods-BasefyChallenge/Pods-BasefyChallenge.release.xcconfig"; sourceTree = "<group>"; };
+		ADACB80A569288FF04D10DA8 /* Pods_BasefyChallenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BasefyChallenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDF0FE87229477BD00C3D7BA /* BasefyChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BasefyChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDF0FE8A229477BD00C3D7BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DDF0FE91229477BE00C3D7BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -88,6 +91,7 @@
 		DDF0FFB222947A2A00C3D7BA /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		DDF0FFB422947A3900C3D7BA /* TinyConstraints.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TinyConstraints.framework; path = Carthage/Build/iOS/TinyConstraints.framework; sourceTree = "<group>"; };
 		DDF0FFB622947A4300C3D7BA /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
+		E5AF492D3F50145AA5AE12DF /* Pods-BasefyChallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BasefyChallenge.debug.xcconfig"; path = "Target Support Files/Pods-BasefyChallenge/Pods-BasefyChallenge.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,18 +102,29 @@
 				DDF0FFB722947A4300C3D7BA /* Kingfisher.framework in Frameworks */,
 				DDF0FFB522947A3900C3D7BA /* TinyConstraints.framework in Frameworks */,
 				DDF0FFB322947A2A00C3D7BA /* Alamofire.framework in Frameworks */,
+				B009C7DAA4C5126A0160C3DE /* Pods_BasefyChallenge.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D6A95AB225C307F4FEC2471D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E5AF492D3F50145AA5AE12DF /* Pods-BasefyChallenge.debug.xcconfig */,
+				53390ACB6953F32365CDBB56 /* Pods-BasefyChallenge.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		DDF0FE7E229477BD00C3D7BA = {
 			isa = PBXGroup;
 			children = (
 				DDF0FE89229477BD00C3D7BA /* BasefyChallenge */,
 				DDF0FE88229477BD00C3D7BA /* Products */,
 				DDF0FFB122947A2A00C3D7BA /* Frameworks */,
+				D6A95AB225C307F4FEC2471D /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -283,6 +298,7 @@
 				DDF0FFB622947A4300C3D7BA /* Kingfisher.framework */,
 				DDF0FFB422947A3900C3D7BA /* TinyConstraints.framework */,
 				DDF0FFB222947A2A00C3D7BA /* Alamofire.framework */,
+				ADACB80A569288FF04D10DA8 /* Pods_BasefyChallenge.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -294,10 +310,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DDF0FE99229477BE00C3D7BA /* Build configuration list for PBXNativeTarget "BasefyChallenge" */;
 			buildPhases = (
+				B033F34184EFC5A26E9FAE66 /* [CP] Check Pods Manifest.lock */,
 				DDF0FE83229477BD00C3D7BA /* Sources */,
 				DDF0FE84229477BD00C3D7BA /* Frameworks */,
 				DDF0FE85229477BD00C3D7BA /* Resources */,
-				DDF0FFB822947A4900C3D7BA /* ShellScript */,
+				DDF0FFB822947A4900C3D7BA /* Run Script */,
+				3FEAA961695828498D888AE8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -354,7 +372,55 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		DDF0FFB822947A4900C3D7BA /* ShellScript */ = {
+		3FEAA961695828498D888AE8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BasefyChallenge/Pods-BasefyChallenge-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/TinyConstraints/TinyConstraints.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TinyConstraints.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BasefyChallenge/Pods-BasefyChallenge-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B033F34184EFC5A26E9FAE66 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BasefyChallenge-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DDF0FFB822947A4900C3D7BA /* Run Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -366,6 +432,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Kingfisher.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/TinyConstraints.framework",
 			);
+			name = "Run Script";
 			outputFileListPaths = (
 			);
 			outputPaths = (
@@ -549,6 +616,7 @@
 		};
 		DDF0FE9A229477BE00C3D7BA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E5AF492D3F50145AA5AE12DF /* Pods-BasefyChallenge.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -571,6 +639,7 @@
 		};
 		DDF0FE9B229477BE00C3D7BA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 53390ACB6953F32365CDBB56 /* Pods-BasefyChallenge.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
