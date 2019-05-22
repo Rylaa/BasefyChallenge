@@ -34,7 +34,6 @@ final class UserProfileViewModel : UserProfileProtocol {
                self.notify(.userProfileDetail(self.presentation!))
             case .failure(let err):
                 print(err)
-                // TODO: Implement
             }
         }
     }
@@ -49,7 +48,6 @@ final class UserProfileViewModel : UserProfileProtocol {
                 self.notify(.userRepoDetail(self.userRepositories))
             case .failure(let err):
                 print(err)
-                //TODO: Implement
             }
         }
     }

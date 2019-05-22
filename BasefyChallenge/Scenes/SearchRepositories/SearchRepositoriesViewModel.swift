@@ -25,7 +25,6 @@ final class SearchRepositoriesViewModel : SearchRepositoriesProtocol {
              self.notify(.SearchRepositoriesList(self.repositories))
             case.failure(let err):
                 print(err)
-                //TODO Implement..
             }
         }
     }

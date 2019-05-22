@@ -7,7 +7,6 @@
 //
 
 import Foundation
-
 protocol UserProfileProtocol {
     var delegate : UserProfileDelegate? { get set  }
     func load()
