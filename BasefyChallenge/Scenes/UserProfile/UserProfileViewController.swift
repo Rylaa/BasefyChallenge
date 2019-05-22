@@ -75,7 +75,7 @@ class UserProfileViewController : UITableViewController {
                 self.perform(#selector(reloadData), with: nil, afterDelay: 2.0)
             }
         }
-    }
+    } 
     @objc func reloadData(){
         tableView.reloadData()
     }
