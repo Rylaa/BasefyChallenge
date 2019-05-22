@@ -5,9 +5,7 @@
 //  Created by Yusuf DEMİRKOPARAN on 21.05.2019.
 //  Copyright © 2019 Yusuf DEMİRKOPARAN. All rights reserved.
 //
-
 import UIKit
-
 class UserProfileViewController : UITableViewController {
     // MARK: - Properties
     var viewModel : UserProfileProtocol! {
@@ -21,6 +19,7 @@ class UserProfileViewController : UITableViewController {
     var userPagination  : [UserRepositoriesPresentation] = []
     var limit = 5
     let isActivity = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.gray)
+    var showMore = true
     var presentation : UserProfilePresentation?
     // MARK: - Init
     override func viewDidLoad() {
@@ -38,7 +37,6 @@ class UserProfileViewController : UITableViewController {
         return count
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         if indexPath.section == 0 && presentation?.userName != nil {
             let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as! UserProfileTableCellS1
             let imgURL = URL(string: presentation!.userProfilImg)
@@ -63,21 +61,29 @@ class UserProfileViewController : UITableViewController {
             return view.frame.height*0.1
         }
     }
-    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if indexPath.row == userPagination.count-1 && indexPath.section == 1 {
-            if userRepositories.count>userPagination.count && userPagination.count>limit {
-                var index = userPagination.count
-                limit = index+5
-                while  index < limit && index < userRepositories.count {
-                    userPagination.append(userRepositories[index])
-                    index+=1
+    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let offset = scrollView.contentOffset.y
+        let content = (scrollView.contentSize.height - scrollView.frame.size.height)
+        if showMore {
+            if ( offset < content)
+            {
+                if userRepositories.count>userPagination.count && userPagination.count>limit {
+                    var index = userPagination.count
+                    limit = index+5
+                    
+                    while  index < limit && index < userRepositories.count {
+                        userPagination.append(userRepositories[index])
+                        index+=1
+                    }
+                    showMore = false
+                    self.perform(#selector(reloadData), with: nil, afterDelay: 2.0)
                 }
-                self.perform(#selector(reloadData), with: nil, afterDelay: 2.0)
             }
         }
-    } 
+    }
     @objc func reloadData(){
         tableView.reloadData()
+        showMore = true
     }
     fileprivate func tableviewSetup() {
         tableView.register(UserProfileTableCellS1.self, forCellReuseIdentifier: cellID)

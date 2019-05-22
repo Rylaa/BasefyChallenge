@@ -19,9 +19,9 @@ class SearchRepositoriesViewController : UITableViewController {
     var searchPagination  : [SearchPresentation] = []
     let cellID           = "cell"
     var searchController = UISearchController(searchResultsController: nil)
-    var limit            = 5
-    var fetchingMore     = false
+    var limit            = 6
     let isActivity = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.gray)
+    var showMore = true
     //MARK: - Init
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,16 +71,22 @@ class SearchRepositoriesViewController : UITableViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return view.frame.height*0.15
     }
-    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if indexPath.row == searchPagination .count-1 && searchList.count>limit {
-            if searchPagination.count < searchList.count{
-                var index = searchPagination .count
-                limit = index + 5
-                while index < limit && index < searchList.count {
-                    searchPagination .append(searchList[index])
-                    index+=1
+    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let offset = scrollView.contentOffset.y
+        let content = (scrollView.contentSize.height - scrollView.frame.size.height)
+        if showMore {
+            if ( offset < content)
+            {
+                if searchPagination.count < searchList.count {
+                    showMore = false
+                    var index = searchPagination.count
+                    limit = index + 5
+                    while index < limit && index < searchList.count {
+                        searchPagination .append(searchList[index])
+                        index+=1
+                    }
+                    self.perform(#selector(relodData), with: nil, afterDelay: 2.0)
                 }
-                self.perform(#selector(relodData), with: nil, afterDelay: 2.0)
             }
         }
     }
@@ -89,6 +95,7 @@ class SearchRepositoriesViewController : UITableViewController {
     }
     @objc func relodData(){
         tableView.reloadData()
+        showMore = true
     }
     @objc func doSomethingOnTap(_ sender: UITapGestureRecognizer) {
         let selectedCell = searchPagination[(sender.view?.tag)!]
@@ -124,7 +131,7 @@ extension SearchRepositoriesViewController : SearchRepositoriesDelegate {
         case .SearchRepositoriesList(let searchList):
             self.searchList = searchList
             searchPagination .removeAll()
-            limit = 5
+            limit = 6
             if searchList.count > limit {
                     let array = Array(searchList.prefix(limit))
                     searchPagination = array
