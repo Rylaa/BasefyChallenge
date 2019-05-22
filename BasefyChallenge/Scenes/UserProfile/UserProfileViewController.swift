@@ -58,7 +58,7 @@ class UserProfileViewController : UITableViewController {
         if indexPath.section == 0 {
             return view.frame.height*0.2
         } else {
-            return view.frame.height*0.1
+            return view.frame.height*0.15
         }
     }
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {

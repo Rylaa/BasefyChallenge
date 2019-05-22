@@ -15,7 +15,7 @@ class SearchRepositoriesTableCell : UITableViewCell {
     lazy var repoNameLabel : UILabel = {
         let lbl = UILabel()
         lbl.font = UIFont.systemFont(ofSize: 15, weight: .bold)
-        lbl.textAlignment = .center
+        lbl.textAlignment = .left
         lbl.textColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
         lbl.numberOfLines = 1
         lbl.sizeToFit()
@@ -24,7 +24,7 @@ class SearchRepositoriesTableCell : UITableViewCell {
     lazy var userNameLabel : UILabel = {
         let lbl = UILabel()
         lbl.font = UIFont.systemFont(ofSize: 20, weight: .bold)
-        lbl.textAlignment = .center
+        lbl.textAlignment = NSTextAlignment.left
         lbl.textColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
         lbl.numberOfLines = 0
         lbl.sizeToFit()
@@ -65,13 +65,14 @@ class SearchRepositoriesTableCell : UITableViewCell {
         userProfilImage.width(imageSize)
         userProfilImage.height(imageSize)
         
-        userNameLabel.centerX(to: self, offset: +10)
-        userNameLabel.leftToRight(of: userProfilImage)
+      
+        userNameLabel.leftToRight(of: userProfilImage, offset:+30)
         userNameLabel.centerY(to: self, offset: -10)
+        userNameLabel.right(to: self)
         
         repoNameLabel.topToBottom(of: userNameLabel)
-        repoNameLabel.leftToRight(of: userProfilImage)
-        repoNameLabel.centerX(to: self)
+        repoNameLabel.leftToRight(of: userProfilImage, offset: +30)
+        repoNameLabel.right(to: self)
     }
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

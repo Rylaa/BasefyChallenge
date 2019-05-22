@@ -41,20 +41,20 @@ class RepositoryDetailViewController : UIViewController {
         userProfilImage.layer.borderColor = UIColor.darkGray.cgColor
         userProfilImage.layer.borderWidth = 1
         userProfilImage.contentMode = UIView.ContentMode.scaleAspectFit
-        repoName.font = UIFont.systemFont(ofSize: 20)
+        repoName.font = UIFont.systemFont(ofSize: 20, weight: .medium)
         repoName.textColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
-        userName.font = UIFont.systemFont(ofSize: 20)
+        userName.font = UIFont.systemFont(ofSize: 20, weight: .medium)
         userName.textColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
-        Language.font = UIFont.systemFont(ofSize: 20)
+        Language.font = UIFont.systemFont(ofSize: 20, weight: .medium)
         Language.textColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
-        branch.font   = UIFont.systemFont(ofSize: 20)
+        branch.font   = UIFont.systemFont(ofSize: 20, weight: .medium)
         branch.textColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
-        forks.font   = UIFont.systemFont(ofSize: 20)
+        forks.font   = UIFont.systemFont(ofSize: 20, weight: .medium)
         forks.textColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
         
         
         
-        userProfilImage.top(to: view, offset: view.frame.height*0.2)
+        userProfilImage.top(to: view, offset: view.frame.height*0.25)
         userProfilImage.centerX(to: view)
         userProfilImage.width(imageSize)
         userProfilImage.height(imageSize)
@@ -63,16 +63,16 @@ class RepositoryDetailViewController : UIViewController {
         
         repoName.left(to: view, offset: 30)
         
-        userName.topToBottom(of: repoName)
+        userName.topToBottom(of: repoName, offset: 10)
         userName.left(to: view, offset: 30)
         
-        Language.topToBottom(of: userName)
+        Language.topToBottom(of: userName, offset: 10)
         Language.left(to: view, offset:30)
         
-        branch.topToBottom(of: Language)
+        branch.topToBottom(of: Language, offset: 10)
         branch.left(to: view, offset:30)
         
-        forks.topToBottom(of: branch)
+        forks.topToBottom(of: branch, offset: 10)
         forks.left(to: view,offset:30)
         
         

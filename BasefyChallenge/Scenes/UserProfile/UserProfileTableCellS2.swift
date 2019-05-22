@@ -13,15 +13,16 @@ class UserProfileTableCellS2 : UITableViewCell {
     
     lazy var repoName : UILabel = {
         var lbl                       = UILabel()
-        lbl.font                      = UIFont.systemFont(ofSize: 18, weight: .bold)
+        lbl.font                      = UIFont.systemFont(ofSize: 15, weight: .bold)
         lbl.textColor                 = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
         lbl.adjustsFontSizeToFitWidth = true
         lbl.numberOfLines             = 1
+        lbl.sizeToFit()
         return lbl
     }()
     lazy var repoDesc : UILabel = {
         var lbl                       = UILabel()
-        lbl.font                      = UIFont.systemFont(ofSize: 15, weight: .bold)
+        lbl.font                      = UIFont.systemFont(ofSize: 14, weight: .bold)
         lbl.textColor                 = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
         lbl.adjustsFontSizeToFitWidth = true
         lbl.numberOfLines             = 0
@@ -35,7 +36,7 @@ class UserProfileTableCellS2 : UITableViewCell {
         self.addSubview(repoDesc)
         
         repoName.left(to: self, offset:+20)
-        repoName.top(to: self,offset: +20)
+        repoName.top(to: self,offset: +10)
         
         repoDesc.topToBottom(of: repoName)
         repoDesc.left(to: self, offset:+20)
