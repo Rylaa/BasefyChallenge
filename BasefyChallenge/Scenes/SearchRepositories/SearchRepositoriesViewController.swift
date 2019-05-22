@@ -22,14 +22,12 @@ class SearchRepositoriesViewController : UITableViewController {
     var limit            = 5
     var fetchingMore     = false
     let isActivity = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.gray)
-    
     //MARK: - Init
     override func viewDidLoad() {
         super.viewDidLoad()
         tableviewSetup()
         setupNavBar()
     }
-    
     fileprivate func setupNavBar(){
         self.title = "Search Repositories"
         self.navigationItem.largeTitleDisplayMode = .always
@@ -127,18 +125,14 @@ extension SearchRepositoriesViewController : SearchRepositoriesDelegate {
             self.searchList = searchList
             searchPagination .removeAll()
             limit = 5
-            //TODO: Implement for is not better way try map..
             if searchList.count > limit {
-                //TODO Implement
-                for index in searchPagination .count...limit{
-                    searchPagination .append(searchList[index])
-                }
+                    let array = Array(searchList.prefix(limit))
+                    searchPagination = array
             } else {
                 searchPagination  = searchList
             }
             tableView.reloadData()
         }
-        
     }
     func navigate(_ route: viewContracts) {
         switch route {

@@ -8,9 +8,7 @@
 
 import Foundation
 extension  UserRepositoriesPresentation {
-    
     init(service : Repositories) {
-        
         self.avatarURL       = service.owner.avatarURL
         self.fullName        = service.fullName
         self.jsonDescription = service.jsonDescription

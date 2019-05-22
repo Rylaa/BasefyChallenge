@@ -7,10 +7,7 @@
 //
 
 import Foundation
-
 final class RepositoryDetailViewModel : RepositoryDetailsProtocol {
-   
-    
     // MARK: - Properties
     weak var delegate: RepositoryDetailDelegate?
     let presentation : SearchPresentation
@@ -22,5 +19,4 @@ final class RepositoryDetailViewModel : RepositoryDetailsProtocol {
     func load() {
         delegate?.handleViewModelOutputs(presentation: presentation)
     }
-    
 }

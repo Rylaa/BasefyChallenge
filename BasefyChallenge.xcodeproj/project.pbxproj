@@ -138,9 +138,9 @@
 		DDF0FF5C2294796D00C3D7BA /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				DDF0FF5D2294796D00C3D7BA /* RepositoryDetail */,
 				DDF0FF632294796D00C3D7BA /* SearchRepositories */,
 				DDF0FF692294796E00C3D7BA /* UserProfile */,
+				DDF0FF5D2294796D00C3D7BA /* RepositoryDetail */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";

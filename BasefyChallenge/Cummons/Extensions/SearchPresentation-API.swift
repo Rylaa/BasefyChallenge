@@ -7,7 +7,6 @@
 //
 
 import Foundation
-
 extension SearchPresentation {
     init(service : Items) {
         self.repoName       = service.repoName
@@ -17,7 +16,6 @@ extension SearchPresentation {
         self.userReposUrl   = service.owner.userReposUrl
         self.branchName     = service.branchName
         self.forks          = service.forks
-        self.language       = service.language
-        
+        self.language       = service.language  
     }
 }

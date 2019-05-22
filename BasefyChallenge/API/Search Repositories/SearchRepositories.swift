@@ -7,36 +7,6 @@
 //
 
 import Foundation
-//{
-//    "total_count": 16396,
-//    "incomplete_results": false,
-//    "items": [
-//    {
-//    "id": 892275,
-//    "node_id": "MDEwOlJlcG9zaXRvcnk4OTIyNzU=",
-//    "name": "retrofit",
-//    "full_name": "square/retrofit",
-//    "private": false,
-
-//    "owner": {
-//    "login": "square",
-//    "id": 82592,
-//    "node_id": "MDEyOk9yZ2FuaXphdGlvbjgyNTky",
-//    "avatar_url": "https://avatars0.githubusercontent.com/u/82592?v=4",
-//    "gravatar_id": "",
-//
-//    },
-//    "html_url": "https://github.com/square/retrofit",
-//    "description": "Type-safe HTTP client for Android and Java by Square, Inc.",
-//
-//    "url": "https://api.github.com/repos/square/retrofit",
-//
-//    "homepage": "http://square.github.io/retrofit/",
-//
-//
-//
-//    },
-//    ]}
 struct SearchRepositories : Decodable {
     public let items      : [Items]
 }

@@ -55,7 +55,6 @@ class UserProfileViewController : UITableViewController {
             }
             return cell
         }
-        
     }
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 0 {
@@ -111,9 +110,10 @@ extension UserProfileViewController : UserProfileDelegate {
             userPagination.removeAll()
             limit = 5
             if self.userRepositories.count > limit {
-                for index in self.userPagination.count...limit{
-                    self.userPagination.append(userRepositories[index])
-                }
+                let range = userRepositories.prefix(limit)
+                userPagination = Array(range)
+            } else {
+                userPagination = userRepositories
             }
             tableView.reloadData()
         }

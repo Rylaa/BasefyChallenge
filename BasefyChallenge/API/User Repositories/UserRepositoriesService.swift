@@ -7,7 +7,6 @@
 //
 
 import Alamofire
-
 final class UserRepositoriesService {
     static func getUserRepositories(with url:String, completion: @escaping(ServiceResult<UserRepositories>)->Void){
           let escapedEndpoint = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)

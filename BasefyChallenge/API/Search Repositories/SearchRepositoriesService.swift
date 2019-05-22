@@ -7,13 +7,11 @@
 //
 
 import Alamofire
-
 final class SearchRepositoriesService {
     static func getSearchItems(with searchParamter: String, completion: @escaping (ServiceResult<SearchRepositories>)->Void){
         let urlString = "https://api.github.com/search/repositories?q=\(searchParamter)"
         let escapedEndpoint = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
         guard let endpoint = escapedEndpoint else { return }
-        
         AF.request(endpoint).responseData { (DataResponse) in
             switch DataResponse.result {
             case.success(let data):
