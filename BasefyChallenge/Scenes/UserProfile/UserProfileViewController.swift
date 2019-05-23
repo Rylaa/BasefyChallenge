@@ -61,21 +61,21 @@ class UserProfileViewController : UITableViewController {
             return view.frame.height*0.15
         }
     }
+
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let offset = scrollView.contentOffset.y
         let content = (scrollView.contentSize.height - scrollView.frame.size.height)
         if showMore {
             if ( offset < content)
             {
-                if userRepositories.count>userPagination.count && userPagination.count>limit {
+                if userRepositories.count > userPagination.count {
+                    showMore = false
                     var index = userPagination.count
-                    limit = index+5
-                    
-                    while  index < limit && index < userRepositories.count {
+                    limit = index + 5
+                    while index < limit && index < userRepositories.count {
                         userPagination.append(userRepositories[index])
                         index+=1
                     }
-                    showMore = false
                     self.perform(#selector(reloadData), with: nil, afterDelay: 2.0)
                 }
             }
