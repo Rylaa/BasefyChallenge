@@ -43,9 +43,6 @@
 		DDF0FFAD2294796E00C3D7BA /* UserRepositoriesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF0FF882294796E00C3D7BA /* UserRepositoriesService.swift */; };
 		DDF0FFAE2294796E00C3D7BA /* SearchRepositoriesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF0FF8A2294796E00C3D7BA /* SearchRepositoriesService.swift */; };
 		DDF0FFAF2294796E00C3D7BA /* SearchRepositories.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF0FF8B2294796E00C3D7BA /* SearchRepositories.swift */; };
-		DDF0FFB322947A2A00C3D7BA /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDF0FFB222947A2A00C3D7BA /* Alamofire.framework */; };
-		DDF0FFB522947A3900C3D7BA /* TinyConstraints.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDF0FFB422947A3900C3D7BA /* TinyConstraints.framework */; };
-		DDF0FFB722947A4300C3D7BA /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDF0FFB622947A4300C3D7BA /* Kingfisher.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -99,9 +96,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DDF0FFB722947A4300C3D7BA /* Kingfisher.framework in Frameworks */,
-				DDF0FFB522947A3900C3D7BA /* TinyConstraints.framework in Frameworks */,
-				DDF0FFB322947A2A00C3D7BA /* Alamofire.framework in Frameworks */,
 				B009C7DAA4C5126A0160C3DE /* Pods_BasefyChallenge.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -314,7 +308,6 @@
 				DDF0FE83229477BD00C3D7BA /* Sources */,
 				DDF0FE84229477BD00C3D7BA /* Frameworks */,
 				DDF0FE85229477BD00C3D7BA /* Resources */,
-				DDF0FFB822947A4900C3D7BA /* Run Script */,
 				3FEAA961695828498D888AE8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
@@ -419,27 +412,6 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
-		};
-		DDF0FFB822947A4900C3D7BA /* Run Script */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Kingfisher.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/TinyConstraints.framework",
-			);
-			name = "Run Script";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n/usr/local/bin/carthage copy-frameworks\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
